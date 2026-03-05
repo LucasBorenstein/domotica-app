@@ -1,13 +1,40 @@
+:root{
+
+--fondo1:#AE4DEB;
+--fondo2:#5949EB;
+--boton:#52D1EB;
+--boton-hover:#B720F0;
+--texto:white;
+
+}
+
+/* modo oscuro */
+
+.dark-mode{
+
+--fondo1:#1e0f2e;
+--fondo2:#120a1f;
+--boton:#8855EB;
+--boton-hover:#B720F0;
+--texto:#f1f1f1;
+
+}
+
+/* base */
+
 body{
 
 margin:0;
 font-family:sans-serif;
-background:linear-gradient(135deg,#AE4DEB,#5949EB);
-color:white;
+background:linear-gradient(135deg,var(--fondo1),var(--fondo2));
+color:var(--texto);
 height:100vh;
 overflow:hidden;
+transition:0.4s;
 
 }
+
+/* pantallas */
 
 .pantalla{
 
@@ -27,12 +54,16 @@ display:flex;
 
 }
 
+/* titulo */
+
 .titulo{
 
 font-size:40px;
 margin-bottom:40px;
 
 }
+
+/* botones */
 
 .botones{
 
@@ -44,7 +75,7 @@ gap:20px;
 
 .boton-app{
 
-background:#52D1EB;
+background:var(--boton);
 border:none;
 padding:14px 30px;
 border-radius:30px;
@@ -58,9 +89,11 @@ transition:.3s;
 .boton-app:hover{
 
 transform:scale(1.05);
-background:#B720F0;
+background:var(--boton-hover);
 
 }
+
+/* boton volver */
 
 .volver{
 
@@ -70,11 +103,11 @@ left:20px;
 background:none;
 border:none;
 font-size:25px;
-color:white;
+color:var(--texto);
 
 }
 
-/* luces */
+/* panel luces */
 
 .panel-luces{
 
@@ -101,7 +134,7 @@ border-radius:10px;
 
 }
 
-/* interruptor */
+/* interruptor luces */
 
 .switch{
 
@@ -148,7 +181,7 @@ transition:.4s;
 
 input:checked + .slider{
 
-background:#52D1EB;
+background:var(--boton);
 
 }
 
@@ -158,7 +191,7 @@ transform:translateX(24px);
 
 }
 
-/* registro */
+/* formulario */
 
 .formulario{
 
@@ -175,6 +208,73 @@ border-radius:10px;
 border:none;
 
 }
+
+/* switch modo oscuro */
+
+.modo-toggle{
+
+position:absolute;
+top:20px;
+right:20px;
+
+}
+
+.switch-modo{
+
+position:relative;
+display:inline-block;
+width:50px;
+height:26px;
+
+}
+
+.switch-modo input{
+
+opacity:0;
+
+}
+
+.slider-modo{
+
+position:absolute;
+cursor:pointer;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:#ccc;
+border-radius:30px;
+transition:.4s;
+
+}
+
+.slider-modo:before{
+
+position:absolute;
+content:"";
+height:20px;
+width:20px;
+left:3px;
+bottom:3px;
+background:white;
+border-radius:50%;
+transition:.4s;
+
+}
+
+.switch-modo input:checked + .slider-modo{
+
+background:var(--boton);
+
+}
+
+.switch-modo input:checked + .slider-modo:before{
+
+transform:translateX(24px);
+
+}
+
+/* animacion */
 
 @keyframes fade{
 
