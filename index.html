@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Domótica App</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="./estilos.css/estilos.css">
+
+</head>
+
+<body>
+
+<!-- PANTALLA PRINCIPAL -->
+
+<div id="inicio" class="pantalla activa">
+
+<h1 class="titulo">Domótica</h1>
+
+<div class="botones">
+
+<button onclick="mostrar('conectar')" class="boton-app">
+Conectar
+</button>
+
+<button onclick="mostrar('mantenimiento')" class="boton-app">
+Mantenimiento
+</button>
+
+<button onclick="mostrar('registro')" class="boton-app">
+Registro
+</button>
+
+</div>
+
+</div>
+
+<!-- PANTALLA CONECTAR -->
+
+<div id="conectar" class="pantalla">
+
+<button class="volver" onclick="mostrar('inicio')">←</button>
+
+<h2>Buscar dispositivo</h2>
+
+<button class="boton-app" onclick="conectar()">
+Buscar dispositivos
+</button>
+
+<div id="panelLuces" class="panel-luces">
+
+<div class="luz">
+
+<input placeholder="Nombrar luz 1">
+
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+
+</div>
+
+<div class="luz">
+
+<input placeholder="Nombrar luz 2">
+
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+
+</div>
+
+<div class="luz">
+
+<input placeholder="Nombrar luz 3">
+
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MANTENIMIENTO -->
+
+<div id="mantenimiento" class="pantalla">
+
+<button class="volver" onclick="mostrar('inicio')">←</button>
+
+<h2>Mantenimiento</h2>
+
+<p>Contactar soporte</p>
+
+<a class="boton-app" href="https://wa.me/5490000000000" target="_blank">
+WhatsApp Lucas
+</a>
+
+<a class="boton-app" href="https://wa.me/5490000000000" target="_blank">
+WhatsApp Socio
+</a>
+
+</div>
+
+<!-- REGISTRO -->
+
+<div id="registro" class="pantalla">
+
+<button class="volver" onclick="mostrar('inicio')">←</button>
+
+<h2>Crear cuenta</h2>
+
+<form class="formulario">
+
+<input placeholder="Nombre">
+
+<input placeholder="Email">
+
+<input placeholder="Contraseña" type="password">
+
+<button class="boton-app">
+Registrarse
+</button>
+
+</form>
+
+</div>
+
+<script src="./main.js"></script>
+
+</body>
+</html>
